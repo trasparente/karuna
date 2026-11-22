@@ -1,0 +1,2 @@
+# karuna
+karpūragauraṃ karuṇāvatāraṃ
