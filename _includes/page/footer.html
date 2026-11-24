@@ -1,0 +1,6 @@
+{% assign repo = site.github.public_repositories | where: "full_name", site.github.repository_nwo | first %}{% capture footer %}
+- Site_time <time datetime='{{ site.time | date_to_rfc822 }}'>{{ site.time | date_to_rfc822 }}</time>
+- Build_revision <code title='{{ site.github.build_revision }}'>{{ site.github.build_revision | slice: 0, 7 }}</code> {% assign pushed_at = repo | map: "pushed_at" | first | date_to_rfc822 %}pushed_at <time datetime='{{ pushed_at }}'>{{ pushed_at }}</time>
+- GitHub [Repository]({{ site.github.repository_url }}) {% assign created_at = repo | map: "created_at" | first | date_to_rfc822 %}created_at <time datetime='{{ created_at }}'>{{ created_at }}</time>{% if site.remote_theme %}
+- Use <code>remote-theme</code> <a href='https://github.com/{{ site.remote_theme | split: "@" | first }}'>{{ site.remote_theme | split: "@" | first }}</a>{% endif %}
+- Page [code]({{ site.github.repository_url }}/blob/{{ repo | map: 'default_branch' | first }}/{{ page.path }}){% endcapture %}<footer>{{ footer | markdownify }}</footer>

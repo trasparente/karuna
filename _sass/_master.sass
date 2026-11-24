@@ -1,0 +1,85 @@
+html
+  overflow-y: scroll
+  scroll-behavior: smooth
+  scrollbar-color: var(--grey) var(--bg)
+  &:has(:popover-open)
+    overflow: clip
+body
+  background: var(--bg)
+  color: var(--fg)
+  font-family: Arial, sans-serif
+  &.token
+    .no-token
+      display: none
+  &:not(.token)
+    .token
+      display: none
+header, main, footer
+  max-width: var(--width)
+  margin: 0 auto
+header
+  min-height: 2em
+  display: flex
+  justify-content: space-between
+  align-items: center
+h1, h2, h3
+  font-family: system-ui
+tt, code, kbd, samp
+  font-size: 140%
+  word-break: keep-all
+div.highlighter-rouge
+  display: table
+  padding: .3em .4em
+pre
+  margin: 0
+a, summary
+  color: var(--blue)
+  text-decoration: none
+  cursor: pointer
+  &:hover, &:focus
+    text-decoration: underline
+fieldset
+  display: inline-block
+  border-radius: 2px
+  border: 2px solid var(--grey)
+button, input
+  // Reset
+  cursor: pointer
+  background: var(--bg)
+  color: var(--fg)
+  -webkit-appearance: none
+  appearance: none
+  font-family: inherit
+  font-size: inherit
+  line-height: inherit
+  // Style
+  padding: .3em .4em
+  border-radius: 2px
+  border: 1px solid var(--grey)
+  // Interactions
+  &:hover
+    color: var(--blue)
+// Outline
+button, a, summary, input
+  &:focus
+    border-color: transparent
+    outline-color: var(--blue)
+    outline-offset: 0px
+    outline-style: solid
+    outline-width: 1px
+label
+  display: block
+  cursor: pointer
+form
+  display: flex
+  div div
+    padding: .5em
+[popover]
+  background: var(--bg)
+  color: var(--fg)
+  cursor: default
+  border-radius: 2px
+  border: 2px solid var(--grey)
+  padding: .3em .4em
+  &::backdrop
+    background: var(--bg)

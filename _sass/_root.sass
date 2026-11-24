@@ -1,0 +1,24 @@
+@mixin dark-scheme
+  --blue: hsl(218, 100%, 62%)
+  --bg: var(--black)
+  --fg: var(--white)
+
+@mixin light-scheme
+  --blue: hsl(240, 100%, 59.6%)
+  --bg: var(--white)
+  --fg: var(--black)
+
+\:root
+  --white: hsl(0, 0%, 95%)
+  --black: hsl(0, 0%, 5%)
+  --grey: hsl(0, 0%, 50%)
+  --red: hsl(12, 90%, 55%)
+  --width: 650px
+  @media (prefers-color-scheme: light)
+    @include light-scheme
+    .inverse
+      @include dark-scheme
+  @media (prefers-color-scheme: dark)
+    @include dark-scheme
+    .inverse
+      @include light-scheme
